@@ -1,0 +1,10 @@
+class Solution:
+    def firstMissingPositive(self, nums: List[int]) -> int:
+        nums.sort()
+        missing = 1
+
+        for num in set(nums):
+            if num > 0 and num == missing:
+                missing += 1
+        
+        return missing
